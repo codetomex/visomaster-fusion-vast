@@ -12,6 +12,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 RUN git clone https://github.com/VisoMasterFusion/VisoMaster-Fusion.git /opt/visomaster && \
     cd /opt/visomaster && git checkout "${VISOMASTER_COMMIT}" && \
+    sed -i 's/^cuda-toolkit==13\.2\.1$/cuda-toolkit==13.0.2/' requirements_cu13.txt && \
     python3 -m venv /opt/visomaster/.venv && \
     /opt/visomaster/.venv/bin/pip install --no-cache-dir uv && \
     cd /opt/visomaster && /opt/visomaster/.venv/bin/uv pip install --no-cache -r requirements_cu13.txt
@@ -35,4 +36,3 @@ ENV VISOMASTER_HOME=/opt/visomaster \
     NVIDIA_DRIVER_CAPABILITIES=all
 
 USER user
-
