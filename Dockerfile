@@ -12,6 +12,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 RUN git clone https://github.com/VisoMasterFusion/VisoMaster-Fusion.git /opt/visomaster && \
     cd /opt/visomaster && git checkout "${VISOMASTER_COMMIT}" && \
+    sed -i 's#"OutputMediaFolder", ""#"OutputMediaFolder", "/workspace/output"#' app/ui/main_ui.py && \
+    sed -i '/create_control(self, "OutputMediaFolder"/a\        self.outputFolderLineEdit.setText("/workspace/output")' app/ui/main_ui.py && \
     sed -i -E '/^(cuda-toolkit|nvidia-cublas|nvidia-cuda-nvrtc|nvidia-cudnn-cu13)==/d' requirements_cu13.txt && \
     python3 -m venv /opt/visomaster/.venv && \
     /opt/visomaster/.venv/bin/pip install --no-cache-dir uv && \
