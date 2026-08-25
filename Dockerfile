@@ -1,4 +1,4 @@
-FROM vastai/linux-desktop:cuda-13.2-ubuntu24.04-2026-06-16
+FROM vastai/linux-desktop:ubuntu24.04-2026-06-16
 
 USER root
 
