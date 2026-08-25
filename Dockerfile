@@ -76,10 +76,22 @@ RUN cd /opt/visomaster && sed -n '86,90p' /tmp/requirements-resolved.txt > /tmp/
 RUN cd /opt/visomaster && sed -n '91,95p' /tmp/requirements-resolved.txt > /tmp/requirements-chunk.txt && \
     /opt/visomaster/.venv/bin/uv pip install --python /opt/visomaster/.venv/bin/python --no-cache --no-deps -r /tmp/requirements-chunk.txt
 
-RUN cd /opt/visomaster && sed -n '96,100p' /tmp/requirements-resolved.txt > /tmp/requirements-chunk.txt && \
+RUN cd /opt/visomaster && sed -n '96p' /tmp/requirements-resolved.txt > /tmp/requirements-chunk.txt && \
     /opt/visomaster/.venv/bin/uv pip install --python /opt/visomaster/.venv/bin/python --no-cache --no-deps -r /tmp/requirements-chunk.txt
 
-RUN cd /opt/visomaster && sed -n '101,105p' /tmp/requirements-resolved.txt > /tmp/requirements-chunk.txt && \
+RUN cd /opt/visomaster && sed -n '97,98p' /tmp/requirements-resolved.txt > /tmp/requirements-chunk.txt && \
+    /opt/visomaster/.venv/bin/uv pip install --python /opt/visomaster/.venv/bin/python --no-cache --no-deps -r /tmp/requirements-chunk.txt
+
+RUN cd /opt/visomaster && sed -n '99p' /tmp/requirements-resolved.txt > /tmp/requirements-chunk.txt && \
+    /opt/visomaster/.venv/bin/uv pip install --python /opt/visomaster/.venv/bin/python --no-cache --no-deps -r /tmp/requirements-chunk.txt
+
+RUN cd /opt/visomaster && sed -n '100p' /tmp/requirements-resolved.txt > /tmp/requirements-chunk.txt && \
+    /opt/visomaster/.venv/bin/uv pip install --python /opt/visomaster/.venv/bin/python --no-cache --no-deps -r /tmp/requirements-chunk.txt
+
+RUN cd /opt/visomaster && sed -n '101,102p' /tmp/requirements-resolved.txt > /tmp/requirements-chunk.txt && \
+    /opt/visomaster/.venv/bin/uv pip install --python /opt/visomaster/.venv/bin/python --no-cache --no-deps -r /tmp/requirements-chunk.txt
+
+RUN cd /opt/visomaster && sed -n '103,105p' /tmp/requirements-resolved.txt > /tmp/requirements-chunk.txt && \
     /opt/visomaster/.venv/bin/uv pip install --python /opt/visomaster/.venv/bin/python --no-cache --no-deps -r /tmp/requirements-chunk.txt
 
 RUN cd /opt/visomaster && sed -n '106,110p' /tmp/requirements-resolved.txt > /tmp/requirements-chunk.txt && \
@@ -106,10 +118,11 @@ RUN cd /opt/visomaster && MODEL_START=28 MODEL_END=29 \
     /opt/visomaster/.venv/bin/python download-model-group.py
 
 RUN rm -rf /root/.cache /home/user/.cache && \
-    chown -R user:root /opt/visomaster
+    chown user:root /opt/visomaster /opt/visomaster/model_assets && \
+    chmod 0775 /opt/visomaster /opt/visomaster/model_assets
 
 COPY start-visomaster.sh /opt/start-visomaster.sh
-COPY default-workspace.json /opt/visomaster/last_workspace.json
+COPY --chown=user:root default-workspace.json /opt/visomaster/last_workspace.json
 COPY visomaster.conf /etc/supervisor/conf.d/visomaster.conf
 
 RUN chmod 0755 /opt/start-visomaster.sh && \
