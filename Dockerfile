@@ -90,43 +90,19 @@ RUN /opt/visomaster/.venv/bin/python -c \
 
 COPY download-model-group.py /opt/visomaster/download-model-group.py
 
-RUN cd /opt/visomaster && MODEL_START=0 MODEL_END=5 \
+RUN cd /opt/visomaster && MODEL_START=0 MODEL_END=1 \
     /opt/visomaster/.venv/bin/python download-model-group.py
 
-RUN cd /opt/visomaster && MODEL_START=5 MODEL_END=7 \
+RUN cd /opt/visomaster && MODEL_START=9 MODEL_END=10 \
     /opt/visomaster/.venv/bin/python download-model-group.py
 
-RUN cd /opt/visomaster && MODEL_START=7 MODEL_END=9 \
+RUN cd /opt/visomaster && MODEL_START=15 MODEL_END=16 \
     /opt/visomaster/.venv/bin/python download-model-group.py
 
-RUN cd /opt/visomaster && MODEL_START=9 MODEL_END=27 \
+RUN cd /opt/visomaster && MODEL_START=23 MODEL_END=24 \
     /opt/visomaster/.venv/bin/python download-model-group.py
 
-RUN cd /opt/visomaster && MODEL_START=27 MODEL_END=32 \
-    /opt/visomaster/.venv/bin/python download-model-group.py
-
-RUN cd /opt/visomaster && MODEL_START=32 MODEL_END=45 \
-    /opt/visomaster/.venv/bin/python download-model-group.py
-
-RUN cd /opt/visomaster && MODEL_START=45 MODEL_END=47 \
-    /opt/visomaster/.venv/bin/python download-model-group.py
-
-RUN cd /opt/visomaster && MODEL_START=47 MODEL_END=48 \
-    /opt/visomaster/.venv/bin/python download-model-group.py
-
-RUN cd /opt/visomaster && MODEL_START=48 MODEL_END=59 \
-    /opt/visomaster/.venv/bin/python download-model-group.py
-
-RUN cd /opt/visomaster && MODEL_START=59 MODEL_END=65 \
-    /opt/visomaster/.venv/bin/python download-model-group.py
-
-RUN cd /opt/visomaster && MODEL_START=65 MODEL_END=68 \
-    /opt/visomaster/.venv/bin/python download-model-group.py
-
-RUN cd /opt/visomaster && MODEL_START=68 MODEL_END=69 \
-    /opt/visomaster/.venv/bin/python download-model-group.py
-
-RUN cd /opt/visomaster && MODEL_START=69 MODEL_END=71 \
+RUN cd /opt/visomaster && MODEL_START=28 MODEL_END=29 \
     /opt/visomaster/.venv/bin/python download-model-group.py
 
 RUN rm -rf /root/.cache /home/user/.cache && \
