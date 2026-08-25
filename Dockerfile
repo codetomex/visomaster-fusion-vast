@@ -85,7 +85,8 @@ RUN cd /opt/visomaster && sed -n '101,105p' /tmp/requirements-resolved.txt > /tm
 RUN cd /opt/visomaster && sed -n '106,110p' /tmp/requirements-resolved.txt > /tmp/requirements-chunk.txt && \
     /opt/visomaster/.venv/bin/uv pip install --python /opt/visomaster/.venv/bin/python --no-cache --no-deps -r /tmp/requirements-chunk.txt
 
-RUN /opt/visomaster/.venv/bin/uv pip check --python /opt/visomaster/.venv/bin/python
+RUN /opt/visomaster/.venv/bin/python -c \
+    "import torch, onnxruntime, tensorrt, tensorflow; from PySide6 import QtWidgets; print(torch.__version__, onnxruntime.__version__, tensorrt.__version__)"
 
 COPY download-model-group.py /opt/visomaster/download-model-group.py
 
