@@ -19,7 +19,7 @@ RUN git clone https://github.com/VisoMasterFusion/VisoMaster-Fusion.git /opt/vis
 
 RUN cd /opt/visomaster && /opt/visomaster/.venv/bin/python download_models.py && \
     rm -rf /root/.cache /home/user/.cache && \
-    chown -R user:user /opt/visomaster
+    chown -R user:root /opt/visomaster
 
 COPY start-visomaster.sh /opt/start-visomaster.sh
 COPY visomaster.conf /etc/supervisor/conf.d/visomaster.conf
@@ -29,7 +29,7 @@ RUN chmod 0755 /opt/start-visomaster.sh && \
              /opt/workspace-internal/faces /opt/workspace-internal/projects && \
     cp /opt/start-visomaster.sh /opt/workspace-internal/start-visomaster.sh && \
     ln -s /opt/visomaster /opt/workspace-internal/VisoMaster-Fusion && \
-    chown -R user:user /opt/workspace-internal
+    chown -R user:root /opt/workspace-internal
 
 ENV VISOMASTER_HOME=/opt/visomaster \
     PYTHONUNBUFFERED=1 \
