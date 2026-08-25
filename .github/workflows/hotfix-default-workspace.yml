@@ -1,0 +1,25 @@
+name: Add ready-to-use default workspace
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  append-default-workspace:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: imjasonh/setup-crane@v0.4
+      - name: Add CUDA default workspace to existing image
+        env:
+          GHCR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          IMAGE: ghcr.io/codetomex/visomaster-fusion-vast:rtx5090-ready
+        run: |
+          crane auth login ghcr.io -u "${{ github.actor }}" -p "$GHCR_TOKEN"
+          mkdir -p layer/opt/visomaster
+          cp default-workspace.json layer/opt/visomaster/last_workspace.json
+          tar -C layer -cf default-workspace-layer.tar opt
+          crane append -b "$IMAGE" -f default-workspace-layer.tar -t "$IMAGE"

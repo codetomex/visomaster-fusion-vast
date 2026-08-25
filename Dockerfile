@@ -109,6 +109,7 @@ RUN rm -rf /root/.cache /home/user/.cache && \
     chown -R user:root /opt/visomaster
 
 COPY start-visomaster.sh /opt/start-visomaster.sh
+COPY default-workspace.json /opt/visomaster/last_workspace.json
 COPY visomaster.conf /etc/supervisor/conf.d/visomaster.conf
 
 RUN chmod 0755 /opt/start-visomaster.sh && \
