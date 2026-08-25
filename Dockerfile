@@ -34,5 +34,3 @@ RUN chmod 0755 /opt/start-visomaster.sh && \
 ENV VISOMASTER_HOME=/opt/visomaster \
     PYTHONUNBUFFERED=1 \
     NVIDIA_DRIVER_CAPABILITIES=all
-
-USER user
