@@ -20,72 +20,72 @@ RUN git clone https://github.com/VisoMasterFusion/VisoMaster-Fusion.git /opt/vis
     /opt/visomaster/.venv/bin/pip install --no-cache-dir uv
 
 RUN sed -n '1,5p' /tmp/requirements-resolved.txt > /tmp/requirements-chunk.txt && \
-    /opt/visomaster/.venv/bin/uv pip install --no-cache --no-deps -r /tmp/requirements-chunk.txt
+    /opt/visomaster/.venv/bin/uv pip install --python /opt/visomaster/.venv/bin/python --no-cache --no-deps -r /tmp/requirements-chunk.txt
 
 RUN sed -n '6,10p' /tmp/requirements-resolved.txt > /tmp/requirements-chunk.txt && \
-    /opt/visomaster/.venv/bin/uv pip install --no-cache --no-deps -r /tmp/requirements-chunk.txt
+    /opt/visomaster/.venv/bin/uv pip install --python /opt/visomaster/.venv/bin/python --no-cache --no-deps -r /tmp/requirements-chunk.txt
 
 RUN sed -n '11,15p' /tmp/requirements-resolved.txt > /tmp/requirements-chunk.txt && \
-    /opt/visomaster/.venv/bin/uv pip install --no-cache --no-deps -r /tmp/requirements-chunk.txt
+    /opt/visomaster/.venv/bin/uv pip install --python /opt/visomaster/.venv/bin/python --no-cache --no-deps -r /tmp/requirements-chunk.txt
 
 RUN sed -n '16,20p' /tmp/requirements-resolved.txt > /tmp/requirements-chunk.txt && \
-    /opt/visomaster/.venv/bin/uv pip install --no-cache --no-deps -r /tmp/requirements-chunk.txt
+    /opt/visomaster/.venv/bin/uv pip install --python /opt/visomaster/.venv/bin/python --no-cache --no-deps -r /tmp/requirements-chunk.txt
 
 RUN sed -n '21,25p' /tmp/requirements-resolved.txt > /tmp/requirements-chunk.txt && \
-    /opt/visomaster/.venv/bin/uv pip install --no-cache --no-deps -r /tmp/requirements-chunk.txt
+    /opt/visomaster/.venv/bin/uv pip install --python /opt/visomaster/.venv/bin/python --no-cache --no-deps -r /tmp/requirements-chunk.txt
 
 RUN sed -n '26,30p' /tmp/requirements-resolved.txt > /tmp/requirements-chunk.txt && \
-    /opt/visomaster/.venv/bin/uv pip install --no-cache --no-deps -r /tmp/requirements-chunk.txt
+    /opt/visomaster/.venv/bin/uv pip install --python /opt/visomaster/.venv/bin/python --no-cache --no-deps -r /tmp/requirements-chunk.txt
 
 RUN sed -n '31,35p' /tmp/requirements-resolved.txt > /tmp/requirements-chunk.txt && \
-    /opt/visomaster/.venv/bin/uv pip install --no-cache --no-deps -r /tmp/requirements-chunk.txt
+    /opt/visomaster/.venv/bin/uv pip install --python /opt/visomaster/.venv/bin/python --no-cache --no-deps -r /tmp/requirements-chunk.txt
 
 RUN sed -n '36,40p' /tmp/requirements-resolved.txt > /tmp/requirements-chunk.txt && \
-    /opt/visomaster/.venv/bin/uv pip install --no-cache --no-deps -r /tmp/requirements-chunk.txt
+    /opt/visomaster/.venv/bin/uv pip install --python /opt/visomaster/.venv/bin/python --no-cache --no-deps -r /tmp/requirements-chunk.txt
 
 RUN sed -n '41,45p' /tmp/requirements-resolved.txt > /tmp/requirements-chunk.txt && \
-    /opt/visomaster/.venv/bin/uv pip install --no-cache --no-deps -r /tmp/requirements-chunk.txt
+    /opt/visomaster/.venv/bin/uv pip install --python /opt/visomaster/.venv/bin/python --no-cache --no-deps -r /tmp/requirements-chunk.txt
 
 RUN sed -n '46,50p' /tmp/requirements-resolved.txt > /tmp/requirements-chunk.txt && \
-    /opt/visomaster/.venv/bin/uv pip install --no-cache --no-deps -r /tmp/requirements-chunk.txt
+    /opt/visomaster/.venv/bin/uv pip install --python /opt/visomaster/.venv/bin/python --no-cache --no-deps -r /tmp/requirements-chunk.txt
 
 RUN sed -n '51,55p' /tmp/requirements-resolved.txt > /tmp/requirements-chunk.txt && \
-    /opt/visomaster/.venv/bin/uv pip install --no-cache --no-deps -r /tmp/requirements-chunk.txt
+    /opt/visomaster/.venv/bin/uv pip install --python /opt/visomaster/.venv/bin/python --no-cache --no-deps -r /tmp/requirements-chunk.txt
 
 RUN sed -n '56,60p' /tmp/requirements-resolved.txt > /tmp/requirements-chunk.txt && \
-    /opt/visomaster/.venv/bin/uv pip install --no-cache --no-deps -r /tmp/requirements-chunk.txt
+    /opt/visomaster/.venv/bin/uv pip install --python /opt/visomaster/.venv/bin/python --no-cache --no-deps -r /tmp/requirements-chunk.txt
 
 RUN sed -n '61,65p' /tmp/requirements-resolved.txt > /tmp/requirements-chunk.txt && \
-    /opt/visomaster/.venv/bin/uv pip install --no-cache --no-deps -r /tmp/requirements-chunk.txt
+    /opt/visomaster/.venv/bin/uv pip install --python /opt/visomaster/.venv/bin/python --no-cache --no-deps -r /tmp/requirements-chunk.txt
 
 RUN sed -n '66,70p' /tmp/requirements-resolved.txt > /tmp/requirements-chunk.txt && \
-    /opt/visomaster/.venv/bin/uv pip install --no-cache --no-deps -r /tmp/requirements-chunk.txt
+    /opt/visomaster/.venv/bin/uv pip install --python /opt/visomaster/.venv/bin/python --no-cache --no-deps -r /tmp/requirements-chunk.txt
 
 RUN sed -n '71,75p' /tmp/requirements-resolved.txt > /tmp/requirements-chunk.txt && \
-    /opt/visomaster/.venv/bin/uv pip install --no-cache --no-deps -r /tmp/requirements-chunk.txt
+    /opt/visomaster/.venv/bin/uv pip install --python /opt/visomaster/.venv/bin/python --no-cache --no-deps -r /tmp/requirements-chunk.txt
 
 RUN sed -n '76,80p' /tmp/requirements-resolved.txt > /tmp/requirements-chunk.txt && \
-    /opt/visomaster/.venv/bin/uv pip install --no-cache --no-deps -r /tmp/requirements-chunk.txt
+    /opt/visomaster/.venv/bin/uv pip install --python /opt/visomaster/.venv/bin/python --no-cache --no-deps -r /tmp/requirements-chunk.txt
 
 RUN sed -n '81,85p' /tmp/requirements-resolved.txt > /tmp/requirements-chunk.txt && \
-    /opt/visomaster/.venv/bin/uv pip install --no-cache --no-deps -r /tmp/requirements-chunk.txt
+    /opt/visomaster/.venv/bin/uv pip install --python /opt/visomaster/.venv/bin/python --no-cache --no-deps -r /tmp/requirements-chunk.txt
 
 RUN sed -n '86,90p' /tmp/requirements-resolved.txt > /tmp/requirements-chunk.txt && \
-    /opt/visomaster/.venv/bin/uv pip install --no-cache --no-deps -r /tmp/requirements-chunk.txt
+    /opt/visomaster/.venv/bin/uv pip install --python /opt/visomaster/.venv/bin/python --no-cache --no-deps -r /tmp/requirements-chunk.txt
 
 RUN sed -n '91,95p' /tmp/requirements-resolved.txt > /tmp/requirements-chunk.txt && \
-    /opt/visomaster/.venv/bin/uv pip install --no-cache --no-deps -r /tmp/requirements-chunk.txt
+    /opt/visomaster/.venv/bin/uv pip install --python /opt/visomaster/.venv/bin/python --no-cache --no-deps -r /tmp/requirements-chunk.txt
 
 RUN sed -n '96,100p' /tmp/requirements-resolved.txt > /tmp/requirements-chunk.txt && \
-    /opt/visomaster/.venv/bin/uv pip install --no-cache --no-deps -r /tmp/requirements-chunk.txt
+    /opt/visomaster/.venv/bin/uv pip install --python /opt/visomaster/.venv/bin/python --no-cache --no-deps -r /tmp/requirements-chunk.txt
 
 RUN sed -n '101,105p' /tmp/requirements-resolved.txt > /tmp/requirements-chunk.txt && \
-    /opt/visomaster/.venv/bin/uv pip install --no-cache --no-deps -r /tmp/requirements-chunk.txt
+    /opt/visomaster/.venv/bin/uv pip install --python /opt/visomaster/.venv/bin/python --no-cache --no-deps -r /tmp/requirements-chunk.txt
 
 RUN sed -n '106,110p' /tmp/requirements-resolved.txt > /tmp/requirements-chunk.txt && \
-    /opt/visomaster/.venv/bin/uv pip install --no-cache --no-deps -r /tmp/requirements-chunk.txt
+    /opt/visomaster/.venv/bin/uv pip install --python /opt/visomaster/.venv/bin/python --no-cache --no-deps -r /tmp/requirements-chunk.txt
 
-RUN /opt/visomaster/.venv/bin/uv pip check
+RUN /opt/visomaster/.venv/bin/uv pip check --python /opt/visomaster/.venv/bin/python
 
 COPY download-model-group.py /opt/visomaster/download-model-group.py
 
